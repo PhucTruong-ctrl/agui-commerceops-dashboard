@@ -10,6 +10,7 @@ const envSchema = z.object({
     .transform((value) => Number(value))
     .pipe(z.number().int().min(1).max(65535)),
   DATABASE_URL: z.string().min(1, 'DATABASE_URL is required'),
+  JWT_SECRET: z.string().min(16, 'JWT_SECRET must be at least 16 characters'),
 })
 
 const parsedEnv = envSchema.safeParse(process.env)
