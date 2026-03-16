@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Backend API base architecture with route/controller/service/repository separation.
 - Auth foundation endpoint `POST /api/v1/auth/login` with Zod payload validation and JWT issuing flow.
 - Prisma User model extended with `passwordHash` to support credential-based authentication.
+- Frontend dashboard shell with App Router + layout scaffold for CommerceOps workspace.
+- Base route modules organized under `app/`, `features/`, and reusable `lib/` utilities.
 
 ## [0.1.0] - 2026-03-16
 
