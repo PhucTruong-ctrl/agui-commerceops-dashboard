@@ -1,0 +1,70 @@
+{
+  "preset": "dynamic",
+  "presets": {
+    "dynamic": {
+      "oracle": {
+        "model": "github-copilot/claude-opus-4.6",
+        "variant": "thinking",
+        "skills": [
+          "vercel-react-best-practices",
+          "vercel-composition-patterns",
+          "web-design-guidelines",
+          "seo-audit"
+        ],
+        "mcps": []
+      },
+      "orchestrator": {
+        "model": "cliproxyapi/gpt-5.3-codex(medium)",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "websearch"
+        ]
+      },
+      "fixer": {
+        "model": "github-copilot/gpt-5.3-codex",
+        "variant": "low",
+        "skills": [
+          "vercel-react-best-practices",
+          "vercel-composition-patterns"
+        ],
+        "mcps": []
+      },
+      "designer": {
+        "model": "github-copilot/gemini-3.1-pro-preview",
+        "skills": [
+          "agent-browser",
+          "web-design-guidelines"
+        ],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "github-copilot/gpt-5.3-codex",
+        "variant": "low",
+        "skills": [
+          "seo-audit",
+          "web-scraper"
+        ],
+        "mcps": [
+          "websearch",
+          "context7",
+          "grep_app"
+        ]
+      },
+      "explorer": {
+        "model": "github-copilot/claude-haiku-4.5",
+        "variant": "thinking",
+        "skills": [
+          "web-scraper"
+        ],
+        "mcps": []
+      }
+    }
+  },
+  "balanceProviderUsage": true,
+  "fallback": {
+    "enabled": true,
+    "timeoutMs": 15000
+  }
+}

@@ -28,5 +28,11 @@ pnpm-debug.log*
 *.swp
 *.swo
 
+# OpenCode local runtime noise (keep project configs/skills tracked)
+.opencode/cache/
+.opencode/logs/
+.opencode/tmp/
+.opencode/*.local.json
+
 # LibreOffice lock files
 .~lock.*#

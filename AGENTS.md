@@ -1,45 +1,75 @@
-# AGENTS.md — Governance Workflow
+# AGENTS.md — Project Operating Rules
 
-This repository follows a strict execution workflow tied to Trello tracking.
+This file applies to every agent/session working in this repository (including non-Hive sessions).
 
-## Mandatory Working Rules
+## Scope
 
-1. Do not change the technology stack without explicit approval.
-2. Never commit secrets (`.env`, credentials, private keys, tokens).
-3. Do not modify academic source documents (`docs/*.md`, `docs/*.odt`, `docs/*.pdf`) unless explicitly requested for academic content updates.
-4. Use Conventional Commits for all commits.
+1. Work only inside this project scope.
+2. Do not modify machine-global config (`~/.config/*`, `~/.agents/*`) unless explicitly requested.
+3. Do not work outside the active Trello card scope.
 
-## Required Delivery Workflow (Trello-Driven)
+## Language Policy
 
-For every work item/card:
+1. **Repository content must be English-only**: source code, comments, function/variable names, docs, commit messages, and AGENTS.md.
+2. **Trello content must be Vietnamese-only** to keep board communication consistent.
+3. Do not use emoji in Trello comments.
 
-1. Implement the scoped changes.
-2. Run local verification commands relevant to the scope.
-3. Commit changes with a clear Conventional Commit message.
-4. Update the corresponding Trello card before closing work:
-   - Update checklist items to reflect completed tasks.
-   - Update card status/list (e.g., Done/Completed) according to board convention.
-   - Add a comment with evidence:
-     - commit hash
-     - verification results (lint/build/test)
-     - repository/PR URL (if available)
+## Required Build and Verification
 
-## Evidence Comment Template
+Run verification commands that match the changed scope before reporting completion.
 
-Use this structure when posting Trello evidence:
+- If `frontend/*` changes:
+  - `cd frontend && npm run lint`
+  - `cd frontend && npm run build`
+- If `backend/*` changes:
+  - `cd backend && npm run build`
+  - run backend tests when the card requires tests
+
+If changes are docs/config only and do not affect runtime, explicitly state why full verification was not run.
+
+## Git and Commit Rules
+
+1. Never work directly on `main`/`master`; use a feature branch (`agent/<task-name>` or equivalent).
+2. Check working tree status before editing.
+3. Do not commit or push unless explicitly requested.
+4. Use Conventional Commits.
+
+## Security
+
+1. Never commit secrets (`.env`, credentials, private keys, tokens).
+2. Never print/paste raw secrets in output, logs, or comments.
+3. When sensitive config must be referenced, mask values (`***`).
+
+## Mandatory Trello Workflow
+
+For each card:
+
+1. Implement strictly within card scope.
+2. Run scope-appropriate verification.
+3. Update checklist and list/status according to board convention.
+4. Add an evidence comment with commit hash, verification results, and repo/PR URL (if available).
+
+## Trello Evidence Comment Template (Vietnamese, no emoji)
 
 ```text
-✅ Completed
+Hoàn thành
 - Commit: <hash>
-- Verification:
-  - frontend: <result>
-  - backend: <result>
+- Kết quả xác minh:
+  - frontend: <kết quả>
+  - backend: <kết quả>
 - Repo/PR: <url>
-- Notes: <optional>
+- Ghi chú: <tuỳ chọn>
 ```
 
-## CI/Release Hygiene
+## Definition of Done
 
-- Keep CI workflows under `.github/workflows/` passing.
-- Maintain `CHANGELOG.md` using Keep a Changelog.
-- Maintain `VERSION` as the current project release marker.
+1. Matches the approved card scope.
+2. Required verification commands were run with recorded results.
+3. Trello checklist and evidence comment were updated using the language rules.
+4. Final report includes changed files, verification commands/results, and remaining risks (if any).
+
+## Gotchas
+
+1. Do not start DB/schema implementation before analysis/design chain is complete.
+2. Do not close a card without Trello evidence comment.
+3. Do not claim “done” without scope-appropriate verification.
