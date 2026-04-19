@@ -1,0 +1,22 @@
+{
+  "sessions": [
+    {
+      "sessionId": "ses_25b8987d5ffeCtDccVueC2fJC6",
+      "startedAt": "2026-04-19T06:38:40.781Z",
+      "lastActiveAt": "2026-04-19T06:38:41.049Z",
+      "agent": "hive-master",
+      "sessionKind": "primary",
+      "baseAgent": "hive-master",
+      "directivePrompt": "giải thích cấu trúc dự án hiện tại, explore codebase sau đó giải thích rõ ràng, rành mạch lại, cấu trúc code hiện tại, trạng thái hiện tại"
+    },
+    {
+      "sessionId": "ses_25b88f4ddffe9Sz7fkMCq9d1tk",
+      "startedAt": "2026-04-19T06:39:18.342Z",
+      "lastActiveAt": "2026-04-19T06:39:18.428Z",
+      "agent": "scout-researcher",
+      "sessionKind": "subagent",
+      "baseAgent": "scout-researcher",
+      "directivePrompt": "Bạn là scout-researcher. Hãy khảo sát toàn bộ codebase hiện tại và trả về báo cáo rõ ràng bằng tiếng Việt, có dẫn chứng file/path cụ thể.\n\nMục tiêu:\n1) Mô tả cấu trúc dự án hiện tại (thư mục cấp cao, frontend/backend/docs/config/scripts nếu có).\n2) Tóm tắt kiến trúc code hiện tại: module chính, entry points, luồng gọi quan trọng, công nghệ sử dụng.\n3) Trạng thái hiện tại của repo: branch hiện tại, working tree sạch hay có thay đổi, untracked files, commit gần đây.\n4) Trạng thái vận hành/cấu hình: các file môi trường mẫu, script build/test/lint quan trọng trong package manager config.\n5) Nêu các điểm rủi ro/khoảng trống nếu thấy (ví dụ thiếu test, thiếu docs, config chưa đồng bộ).\n\nYêu cầu thực hiện:\n- Ưu tiên dùng codebase-memory-mcp tools (get_architecture/search_graph/query_graph/get_code_snippet) cho code discovery.\n- Chỉ fallback sang glob/read/grep khi cần khám phá file không-code hoặc metadata.\n- Dùng bash chỉ cho git status/log nếu cần trạng thái repo.\n- Không sửa file.\n\nOutput mong muốn:\n- Phần A: Snapshot nhanh (5-10 bullet).\n- Phần B: Cấu trúc thư mục (tree rút gọn).\n- Phần C: Kiến trúc code (theo frontend/backend hoặc package nếu mono).\n- Phần D: Trạng thái hiện tại (git + mức sẵn sàng build/test dựa trên script hiện có).\n- Phần E: Kết luận ngắn và 3 đề xuất ưu tiên tiếp theo."
+    }
+  ]
+}

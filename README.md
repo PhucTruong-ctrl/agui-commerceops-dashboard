@@ -2,7 +2,7 @@
 
 Hệ thống hỗ trợ điều hành bán hàng bằng tác tử AI (Academic MVP / Tiểu luận chuyên ngành).
 
-## Mục tiêu MVP (Academic)
+## Mục tiêu
 
 - Chuẩn hóa luồng điều hành bán hàng với dashboard tập trung.
 - Cung cấp backend API phục vụ nghiệp vụ vận hành.
@@ -21,7 +21,7 @@ Hệ thống hỗ trợ điều hành bán hàng bằng tác tử AI (Academic M
 .
 ├── backend/                 # API server + Prisma
 ├── frontend/                # Web dashboard
-├── docs/                    # Tài liệu học thuật (không chỉnh sửa ngoài phạm vi)
+├── docs/                    # Tài liệu học thuật
 ├── .github/workflows/       # CI workflows
 ├── AGENTS.md                # Quy trình làm việc bắt buộc
 ├── CHANGELOG.md             # Lịch sử thay đổi (Keep a Changelog)
@@ -29,7 +29,7 @@ Hệ thống hỗ trợ điều hành bán hàng bằng tác tử AI (Academic M
 └── VERSION                  # Phiên bản hiện tại
 ```
 
-## Setup nhanh
+## Setup
 
 ### 1) Frontend
 
@@ -51,6 +51,6 @@ npm run build
 
 ## Development Notes
 
-- Không commit file bí mật (`.env*` ngoại trừ `.env.example`).
-- Theo dõi thay đổi phát hành tại `CHANGELOG.md` và `VERSION`.
+- Không commit file env (`.env*` ngoại trừ `.env.example`).
+- Theo dõi thay đổi ở `CHANGELOG.md` và `VERSION`.
 - Tuân thủ workflow Trello trong `AGENTS.md` khi hoàn tất task.
