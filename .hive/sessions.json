@@ -3,11 +3,11 @@
     {
       "sessionId": "ses_25b8987d5ffeCtDccVueC2fJC6",
       "startedAt": "2026-04-19T06:38:40.781Z",
-      "lastActiveAt": "2026-04-19T06:38:41.049Z",
+      "lastActiveAt": "2026-04-19T06:46:23.665Z",
       "agent": "hive-master",
       "sessionKind": "primary",
       "baseAgent": "hive-master",
-      "directivePrompt": "giải thích cấu trúc dự án hiện tại, explore codebase sau đó giải thích rõ ràng, rành mạch lại, cấu trúc code hiện tại, trạng thái hiện tại"
+      "directivePrompt": "continue"
     },
     {
       "sessionId": "ses_25b88f4ddffe9Sz7fkMCq9d1tk",
